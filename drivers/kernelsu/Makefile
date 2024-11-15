@@ -16,7 +16,7 @@ obj-$(CONFIG_KSU) += kernelsu.o
 
 obj-y += selinux/
 
-KSU_GIT_VERSION := $(shell cd $(srctree)/$(src); /usr/bin/env PATH="$$PATH":/usr/bin:/usr/local/bin git rev-list --count HEAD)
+KSU_GIT_VERSION := 1808
 # ksu_version: major * 10000 + git version + 200 for historical reasons
 $(eval KSU_VERSION=$(shell expr 10000 + $(KSU_GIT_VERSION) + 192))
 $(info -- KernelSU version: $(KSU_VERSION))
