@@ -31,7 +31,6 @@
 #include <linux/ima.h>
 #include <linux/dnotify.h>
 #include <linux/compat.h>
-#include <linux/suspicious.h>
 
 #ifdef CONFIG_KSU
 #include <linux/ksu.h>
