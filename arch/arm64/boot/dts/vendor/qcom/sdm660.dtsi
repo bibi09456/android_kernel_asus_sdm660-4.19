@@ -2565,6 +2565,7 @@
 #include "sdm660-regulator.dtsi"
 #include "msm-gdsc-660.dtsi"
 #include "sdm660-gpu.dtsi"
+#include "sdm660-coresight.dtsi"
 #include "sdm660-pm.dtsi"
 #include "sdm660-thermal.dtsi"
 
