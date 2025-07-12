@@ -16,7 +16,7 @@
 	};
 
 	tmc_etr: tmc@6048000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-tmc", "arm,primecell";
 		arm,primecell-periphid = <0x000bb961>;
 
 		reg = <0x6048000 0x1000>,
@@ -45,7 +45,7 @@
 	};
 
 	replicator_qdss: replicator@6046000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-replicator", "arm,primecell";
 		arm,primecell-periphid = <0x000bb909>;
 
 		reg = <0x6046000 0x1000>;
@@ -80,7 +80,7 @@
 	};
 
 	tmc_etf: tmc@6047000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-tmc", "arm,primecell";
 		arm,primecell-periphid = <0x000bb961>;
 
 		reg = <0x6047000 0x1000>;
@@ -119,7 +119,7 @@
 	};
 
 	funnel_merg: funnel@6045000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-funnel", "arm,primecell";
 		arm,primecell-periphid = <0x000bb908>;
 
 		reg = <0x6045000 0x1000>;
@@ -212,7 +212,7 @@
 	};
 
 	funnel_in1: funnel@6042000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-funnel", "arm,primecell";
 		arm,primecell-periphid = <0x000bb908>;
 
 		reg = <0x6042000 0x1000>;
@@ -271,7 +271,7 @@
 	};
 
 	funnel_apss_merg: funnel@7b70000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-funnel", "arm,primecell";
 		arm,primecell-periphid = <0x000bb908>;
 
 		reg = <0x7b70000 0x1000>;
@@ -322,7 +322,7 @@
 	};
 
 	funnel_apss: funnel@7b60000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-funnel", "arm,primecell";
 		arm,primecell-periphid = <0x000bb908>;
 
 		reg = <0x7b60000 0x1000>;
@@ -434,7 +434,7 @@
 	};
 
 	etm0: etm@7840000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-etm4x", "arm,primecell";
 		arm,primecell-periphid = <0x000bb95d>;
 
 		reg = <0x7840000 0x1000>;
@@ -454,7 +454,7 @@
 	};
 
 	etm1: etm@7940000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-etm4x", "arm,primecell";
 		arm,primecell-periphid = <0x000bb95d>;
 
 		reg = <0x7940000 0x1000>;
@@ -474,7 +474,7 @@
 	};
 
 	etm2: etm@7a40000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-etm4x", "arm,primecell";
 		arm,primecell-periphid = <0x000bb95d>;
 
 		reg = <0x7a40000 0x1000>;
@@ -494,7 +494,7 @@
 	};
 
 	etm3: etm@7b40000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-etm4x", "arm,primecell";
 		arm,primecell-periphid = <0x000bb95d>;
 
 		reg = <0x7b40000 0x1000>;
@@ -514,7 +514,7 @@
 	};
 
 	etm4: etm@7c40000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-etm4x", "arm,primecell";
 		arm,primecell-periphid = <0x000bb95d>;
 
 		reg = <0x7c40000 0x1000>;
@@ -534,7 +534,7 @@
 	};
 
 	etm5: etm@7d40000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-etm4x", "arm,primecell";
 		arm,primecell-periphid = <0x000bb95d>;
 
 		reg = <0x7d40000 0x1000>;
@@ -554,7 +554,7 @@
 	};
 
 	etm6: etm@7e40000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-etm4x", "arm,primecell";
 		arm,primecell-periphid = <0x000bb95d>;
 
 		reg = <0x7e40000 0x1000>;
@@ -574,7 +574,7 @@
 	};
 
 	etm7: etm@7f40000 {
-		compatible = "arm,primecell";
+		compatible = "arm,coresight-etm4x", "arm,primecell";
 		arm,primecell-periphid = <0x000bb95d>;
 
 		reg = <0x7f40000 0x1000>;
