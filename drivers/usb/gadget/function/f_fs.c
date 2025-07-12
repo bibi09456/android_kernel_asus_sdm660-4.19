@@ -3235,6 +3235,7 @@ static inline struct f_fs_opts *ffs_do_functionfs_bind(struct usb_function *f,
 	struct ffs_data *ffs = ffs_opts->dev->ffs_data;
 	struct ffs_data *ffs_data;
 	int ret;
+	int retries = 100;
 
 	ENTER();
 
@@ -3245,12 +3246,21 @@ static inline struct f_fs_opts *ffs_do_functionfs_bind(struct usb_function *f,
 	 *
 	 * Configfs-enabled gadgets however do need ffs_dev_lock.
 	 */
-	if (!ffs_opts->no_configfs)
-		ffs_dev_lock();
-	ret = ffs_opts->dev->desc_ready ? 0 : -ENODEV;
-	ffs_data = ffs_opts->dev->ffs_data;
-	if (!ffs_opts->no_configfs)
-		ffs_dev_unlock();
+	do {
+		if (!ffs_opts->no_configfs)
+			ffs_dev_lock();
+		ret = ffs_opts->dev->desc_ready ? 0 : -ENODEV;
+		ffs_data = ffs_opts->dev->ffs_data;
+		if (!ffs_opts->no_configfs)
+			ffs_dev_unlock();
+		if (ret)
+			msleep(20);
+		else
+			break;
+	} while (--retries);
+
+	pr_info("ffs_do_functionfs_bind %d\n", ret);
+
 	if (ret)
 		return ERR_PTR(ret);
 
