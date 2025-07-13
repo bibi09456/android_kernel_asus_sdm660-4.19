@@ -260,14 +260,6 @@
 					    <&funnel_apss_merg_out_funnel_in1>;
 				};
 			};
-			port@3 {
-				reg = <4>;
-				funnel_in1_in_turing_etm0: endpoint {
-					slave-mode;
-					remote-endpoint =
-					    <&turing_etm0_out_funnel_in1>;
-				};
-			};
 		};
 
 		out-ports {
