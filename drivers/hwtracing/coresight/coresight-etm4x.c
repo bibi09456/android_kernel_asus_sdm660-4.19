@@ -1466,7 +1466,6 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
 		return -ENODEV;
 	}
 
-	cpus_read_lock();
 	ret = smp_call_function_single(drvdata->cpu,
 					etm4_init_arch_data, drvdata, 1);
 	if (ret) {
@@ -1478,13 +1477,9 @@ static int etm4_probe(struct amba_device *adev, const struct amba_id *id)
 		return -EINVAL;
 	}
 
-	ret = etm4_pm_setup_cpuslocked();
-	cpus_read_unlock();
-
-	/* etm4_pm_setup_cpuslocked() does its own cleanup - exit on error */
-	if (ret) {
-		etmdrvdata[drvdata->cpu] = NULL;
-		return ret;
+	if (etm4_arch_supported(drvdata->arch) == false) {
+		ret = -EINVAL;
+		goto err_arch_supported;
 	}
 
 	etm4_init_trace_id(drvdata);
